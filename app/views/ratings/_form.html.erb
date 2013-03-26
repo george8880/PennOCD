@@ -1,4 +1,6 @@
-<%= form_for(@rating) do |f| %>
+<%= form_for(@rating, html: {
+class: "form-horizontal"
+}) do |f| %>
   <% if @rating.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -11,22 +13,53 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :score, class:'control-label' %>
+    <div class="controls">
+      <label class="radio inline">
+        <%= f.radio_button(:score, 1) %>
+        <%= f.label(:score, "1") %>
+      </label>
+      <label class="radio inline">
+        <%= f.radio_button(:score, 2) %>
+        <%= f.label(:score, "2") %>
+      </label>
+      <label class="radio inline">
+        <%= f.radio_button(:score, 3) %>
+        <%= f.label(:score, "3") %>
+      </label>
+      <label class="radio inline">
+        <%= f.radio_button(:score, 4) %>
+        <%= f.label(:score, "4") %>
+      </label>
+      <label class="radio inline">
+        <%= f.radio_button(:score, 5) %>
+        <%= f.label(:score, "5") %>
+      </label>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
+
+  <div class="control-group">
+    <%= f.label :name, class:'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :score %><br />
-    <%= f.number_field :score %>
+
+  <div class="control-group">
+    <%= f.label :comment, class:'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comment %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :hall %><br />
-    <%= f.text_field :hall %>
+
+  <div class="control-group">
+    <%= f.label :hall_id, class:'control-label' %>
+    <div class="control">
+      <%= f.collection_select :hall_id, Hall.all, :id, :name %>
+    </div>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
