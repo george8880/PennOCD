@@ -1,0 +1,11 @@
+development:
+  app_id: Ucg2PMLdxehh9jSyYyfjul6F7Zsu8Lx6HG2ZDw98
+  master_key: tUqDGXkODm9SfvAZJTqI72IW54rfAYHakqD4HJxn
+
+test:
+  app_id: Ucg2PMLdxehh9jSyYyfjul6F7Zsu8Lx6HG2ZDw98
+  master_key: tUqDGXkODm9SfvAZJTqI72IW54rfAYHakqD4HJxn
+
+production:
+  app_id: Ucg2PMLdxehh9jSyYyfjul6F7Zsu8Lx6HG2ZDw98
+  master_key: tUqDGXkODm9SfvAZJTqI72IW54rfAYHakqD4HJxn

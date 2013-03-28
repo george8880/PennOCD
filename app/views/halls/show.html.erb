@@ -1,7 +1,7 @@
-<h2>Listing Ratings for ______________________</h2> 
+<h2>Listing Ratings for <%= @hall.name %> </h2> 
 
 <p>
-  <%= link_to 'New Rating For ____________________', new_rating_path %>
+  <%= link_to 'New Rating for ' + @hall.name, new_rating_path(hall_id: @hall.id) %>
 </p>
 <br>
 <p>
@@ -19,7 +19,7 @@
     <th></th>
   </tr>
 
-<% @hall.ratings.each do |rating| %>
+<% Rating.get_ratings.each do |rating| %>
   <tr>
     <td><%= rating.name %></td>
     <td><%= rating.score %></td>

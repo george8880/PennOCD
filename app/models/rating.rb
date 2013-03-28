@@ -1,10 +1,9 @@
-class Rating < ActiveRecord::Base
-  belongs_to :hall
-  attr_accessible :comment, :name, :score, :created_at, :hall_id
+class Rating < ParseResource::Base
+  fields :comment, :name, :score, :created_at, :hall_id
+  validates_presence_of :score, :hall_id
 
-  validates :score, :hall_id, :presence => true
+  def self.get_ratings
+  	Rating.all
+  end
 
-  
-
-  
 end
